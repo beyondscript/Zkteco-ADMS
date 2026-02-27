@@ -9,6 +9,6 @@ class CustomSessionGuard extends SessionGuard
 {
     public function getRecallerName()
     {
-        return 'remember_me_'.Str::slug(env('APP_NAME'));
+        return 'remember_me_'.Str::slug(env('APP_NAME', 'Zkteco ADMS') ?: 'Zkteco ADMS');
     }
 }
