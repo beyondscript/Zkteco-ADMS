@@ -1,5 +1,5 @@
 <p align="center">
-	Zkteco ADM
+	Zkteco ADMS
 </p>
 
 ## About Zkteco ADMS
