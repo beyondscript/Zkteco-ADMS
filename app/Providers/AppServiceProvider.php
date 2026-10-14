@@ -27,15 +27,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if(Schema::hasTable('users')){
-            if(!User::exists()){
-                User::create([
-                    'name' => 'Admin',
-                    'email' => 'admin@gmail.com',
-                    'password' => Hash::make('12345678')
-                ]);
+        try{
+            if(Schema::hasTable('users')){
+                if(!User::exists()){
+                    User::create([
+                        'name' => 'Admin',
+                        'email' => 'admin@gmail.com',
+                        'password' => Hash::make('12345678')
+                    ]);
+                }
             }
         }
+        catch(\Exception $e){}
 
         Auth::extend(
             'custom_session_guard',
