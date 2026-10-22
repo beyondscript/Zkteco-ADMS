@@ -31,25 +31,25 @@
     </head>
 
     <body>
-        <div>
+        <div class="page_layout">
             <div class="header">
-                <h2 class="header_head">
-                    <a class="navbar-brand" style="font-size: inherit; font-weight: inherit;" href="{{ route('index') }}">
-                        {{ config('app.name') }}
-                    </a>
-                </h2>
-
-                <p class="header_paragraph">Easily manage your zkteco adms services</p>
+                <div class="container header_content" style="justify-content: center;">
+                    <h2 class="header_head">
+                        <a class="navbar-brand" href="{{ route('index') }}">
+                            {{ config('app.name') }}
+                        </a>
+                    </h2>
+                </div>
             </div>
 
-            <main class="py-4" style="min-height: calc(100vh - 185px); display: flex; align-items: center; justify-content: center; padding-top: 15px !important; padding-bottom: 15px !important;">
+            <main class="page_content">
                 @yield('content')
             </main>
 
             <div class="footer">
-                <h2 class="header_head">Easily manage your zkteco adms services</h2>
-
-                <p class="header_paragraph">&copy;{{ now()->year }} all rights reserved | {{config('app.name')}}</p>
+                <div class="container footer_content" style="justify-content: center;">
+                    <p class="header_paragraph">&copy;{{ now()->year }} all rights reserved | {{config('app.name')}}</p>
+                </div>
             </div>
         </div>
 

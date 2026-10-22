@@ -1,23 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container backend_page">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card dashboard_card">
+                <div class="dashboard_sidebar">
+                    @include('backend.partials.navMenu')
+                </div>
+
                 <div class="card-header">
                     @include('backend.partials.headMenu')
                 </div>
 
                 <div class="card-body">
-                    @include('backend.partials.navMenu')
-
-                    <hr>
-
                     <div class="manage_supervisors">
-                        <h4 class="header" style="margin-bottom: 0;">Change email</h4>
+                        <div class="page_heading">
+                            <div><h1 class="page_title">Change email</h1><p class="page_description">Update the email of your workspace.</p></div>
+                        </div>
 
-                        <div style="border: 1px solid red; padding: 1.25rem;">
+                        <div class="settings_form">
                             <form method="POST" action="{{ route('updateEmail') }}">
                                 @csrf
 
@@ -52,7 +54,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-6 offset-md-4">
                                         <div class="form-check" style="display: flex; align-items: center;">
-                                            <input class="form-check-input" style="cursor: pointer; margin-top: 1px;" type="checkbox" name="show-password" id="show-password" onclick="showPassword()">
+                                            <input class="form-check-input" style="cursor: pointer; margin-top: -2px;" type="checkbox" name="show-password" id="show-password" onclick="showPassword()">
 
                                             <label class="form-check-label" style="cursor: pointer;" for="show-password">
                                                 Show password

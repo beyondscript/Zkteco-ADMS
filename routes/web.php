@@ -17,10 +17,10 @@ Route::middleware(['auth'])->group(function () {
 	Route::delete('/reset-error-logs', [BackendController::class, 'resetErrorLogs'])->name('resetErrorLogs');
 
 	Route::get('/change-email', [BackendController::class, 'changeEmail'])->name('changeEmail');
-	Route::post('/update-email', [BackendController::class, 'updateEmail'])->name('updateEmail');
+	Route::post('/update-email', [BackendController::class, 'updateEmail'])->middleware('throttle:6,1')->name('updateEmail');
 
 	Route::get('/change-password', [BackendController::class, 'changePassword'])->name('changePassword');
-	Route::post('/update-password', [BackendController::class, 'updatePassword'])->name('updatePassword');
+	Route::post('/update-password', [BackendController::class, 'updatePassword'])->middleware('throttle:6,1')->name('updatePassword');
 });
 
 Route::get('/iclock/cdata', [ZktecoController::class, 'handshake']);

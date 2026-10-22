@@ -151,11 +151,11 @@ return [
         // Features::updateProfileInformation(),
         // Features::updatePasswords(),
         // CustomFeatures::confirmPasswords(),
-        Features::twoFactorAuthentication([
+        /* Features::twoFactorAuthentication([
             // 'confirm' => true,
             // 'confirmPassword' => true,
             // 'window' => 0,
-        ]),
+        ]), */
     ],
 
 ];

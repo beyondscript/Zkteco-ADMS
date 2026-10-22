@@ -12,28 +12,30 @@
         }
 
         .dataTables_processing.card{
-            color: #0D6EFD;
-            border-color: red;
+            color: #087f72;
+            border-color: #e2e8f0;
         }
     </style>
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container backend_page">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card dashboard_card">
+                <div class="dashboard_sidebar">
+                    @include('backend.partials.navMenu')
+                </div>
+
                 <div class="card-header">
                     @include('backend.partials.headMenu')
                 </div>
 
                 <div class="card-body">
-                    @include('backend.partials.navMenu')
-
-                    <hr>
-
                     <div class="manage_supervisors">
-                        <h4 class="header" style="margin-bottom: 0;">Devices</h4>
+                        <div class="page_heading">
+                            <div><h1 class="page_title">Devices</h1><p class="page_description">Your device network in one clear view.</p></div>
+                        </div>
 
                         <div>
                             <table id="devices-table" class="table table-striped table-bordered" style="margin-top: 0 !important; margin-bottom: 0 !important;" width="100%">
